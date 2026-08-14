@@ -5,9 +5,10 @@
 Part of the Remnant Fieldworks — Coherent Inheritance Framework (CIF) / ExecutionProof program.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21927327.svg)](https://doi.org/10.5281/zenodo.21927327)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21927975.svg)](https://doi.org/10.5281/zenodo.21927975)
 
-Zenodo: [10.5281/zenodo.21927327](https://doi.org/10.5281/zenodo.21927327)
+Zenodo (latest, v0.2.0 hardware results): [10.5281/zenodo.21927975](https://doi.org/10.5281/zenodo.21927975)
+Zenodo (v0.1.0, preregistration only): [10.5281/zenodo.21927327](https://doi.org/10.5281/zenodo.21927327)
 GitHub: [derekhone/quantum-governance-testbed](https://github.com/derekhone/quantum-governance-testbed)
 
 Status: **executed on live IBM Quantum hardware** · QG-001 **FAIL** · QG-004 **PASS** · QG-002 in flight
