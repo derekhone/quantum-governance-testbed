@@ -1,0 +1,71 @@
+{
+  "experiment_id": "QG-002-verdict-portability-v1",
+  "series": "quantum-governance-testbed",
+  "timestamp_utc": "2026-08-14T20:10:00+00:00",
+  "parameters": {
+    "backends": [
+      "ibm_marrakesh",
+      "ibm_kingston"
+    ],
+    "shots": 4096,
+    "trotter_steps": 6,
+    "theta": "pi/4",
+    "delta_m2": 1.0,
+    "energy": 1.0,
+    "L": 1.0,
+    "substrate": "DM-002 sterile neutrino oscillation circuit",
+    "arms_per_backend": [
+      "raw"
+    ],
+    "optimization_level": 1
+  },
+  "observable": "verdict_agreement across two independent physical processors",
+  "result": {
+    "P_analytic": 0.087782,
+    "arms": [
+      {
+        "arm": "ibm_marrakesh",
+        "backend": "ibm_marrakesh",
+        "job_id": "d9v93gl0vrcc73bounp0",
+        "primitive": "SamplerV2",
+        "configuration": "defaults only (raw arm, no error mitigation)",
+        "counts": {
+          "0": 3697,
+          "1": 399
+        },
+        "shots": 4096,
+        "survival_probability": 0.097412109375,
+        "relative_error": 0.10970482986261422,
+        "verdict": "FAIL"
+      },
+      {
+        "arm": "ibm_kingston",
+        "backend": "ibm_kingston",
+        "job_id": "d9v93gob1g9c73a8b3fg",
+        "primitive": "SamplerV2",
+        "configuration": "defaults only (raw arm, no error mitigation)",
+        "counts": {
+          "0": 3740,
+          "1": 356
+        },
+        "shots": 4096,
+        "survival_probability": 0.0869140625,
+        "relative_error": 0.009887419972203857,
+        "verdict": "PASS"
+      }
+    ],
+    "max_spread": 0.010498046875,
+    "relative_error_ratio": 11.09539497371644,
+    "verdict_agreement": 0,
+    "disagreeing_arms": [
+      "ibm_marrakesh"
+    ],
+    "backends_returning_results": 2,
+    "hold_resolution": "HOLD lifted when the second backend (ibm_kingston) completed after an extended queue; preregistered kill condition of >=2 independent backends satisfied."
+  },
+  "threshold": "PASS iff all backends returning results agree under rel_err <= 0.10; HOLD if fewer than 2 backends return",
+  "verdict": "FAIL",
+  "honest_scope": "toy single-qubit observable on two IBM Heron-class processors; two backends is the preregistered minimum, not a survey of hardware. Not a claim about IBM processor quality.",
+  "provenance_note": "Executed 2026-08-14 on live IBM Quantum hardware. Initially recorded HOLD pending the second backend; resolved to FAIL on completion. Rebuilt from authoritative IBM Quantum job results after ephemeral workspace loss. See AMENDMENT_V2.md section 1 and RECONSTRUCTION_NOTICE.md.",
+  "record_hash": "5a2f6000eb3b2783dd8addb1d213e3a75c5fa2e19dfbae2422463b56533b496e"
+}
