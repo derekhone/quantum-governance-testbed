@@ -1,0 +1,105 @@
+{
+  "experiment_id": "QG-001-verdict-stability-v1",
+  "series": "quantum-governance-testbed",
+  "timestamp_utc": "2026-08-14T03:45:00+00:00",
+  "parameters": {
+    "backend": "ibm_marrakesh",
+    "shots": 4096,
+    "trotter_steps": 6,
+    "theta": "pi/4",
+    "delta_m2": 1.0,
+    "energy": 1.0,
+    "L": 1.0,
+    "substrate": "DM-002 sterile neutrino oscillation circuit",
+    "arms": [
+      "raw",
+      "dd",
+      "meas",
+      "twirl",
+      "zne"
+    ],
+    "optimization_level": 1
+  },
+  "observable": "verdict_agreement across five error-treatment arms",
+  "result": {
+    "P_analytic": 0.087782,
+    "arms": [
+      {
+        "arm": "raw",
+        "job_id": "d9v8m7t0vrcc73bou6s0",
+        "primitive": "SamplerV2",
+        "configuration": "defaults only",
+        "counts": {
+          "0": 3708,
+          "1": 388
+        },
+        "shots": 4096,
+        "survival_probability": 0.0947265625,
+        "relative_error": 0.0791114636258003,
+        "verdict": "PASS"
+      },
+      {
+        "arm": "dd",
+        "job_id": "d9v8mnt0vrcc73bou7e0",
+        "primitive": "SamplerV2",
+        "configuration": "dynamical_decoupling.enable=True, sequence_type=XX",
+        "counts": {
+          "0": 3730,
+          "1": 366
+        },
+        "shots": 4096,
+        "survival_probability": 0.08935546875,
+        "relative_error": 0.01792473115217244,
+        "verdict": "PASS"
+      },
+      {
+        "arm": "meas",
+        "job_id": "d9v8neob1g9c73a8ajfg",
+        "primitive": "SamplerV2",
+        "configuration": "twirling.enable_measure=True",
+        "counts": {
+          "0": 3704,
+          "1": 392
+        },
+        "shots": 4096,
+        "survival_probability": 0.095703125,
+        "relative_error": 0.09023632407555081,
+        "verdict": "PASS"
+      },
+      {
+        "arm": "twirl",
+        "job_id": "d9v8mq72sl0c73blin90",
+        "primitive": "SamplerV2",
+        "configuration": "twirling.enable_gates=True",
+        "counts": {
+          "0": 3710,
+          "1": 386
+        },
+        "shots": 4096,
+        "survival_probability": 0.09423828125,
+        "relative_error": 0.07354903340092503,
+        "verdict": "PASS"
+      },
+      {
+        "arm": "zne",
+        "job_id": "d9v8p3vo3ppc73ajvhf0",
+        "primitive": "EstimatorV2",
+        "configuration": "resilience.zne_mitigation=True, noise_factors=[1,3], extrapolator=linear",
+        "expectation_z": 0.7944800394282896,
+        "survival_probability": 0.1027599802858552,
+        "relative_error": 0.1706270110712356,
+        "verdict": "FAIL"
+      }
+    ],
+    "max_spread": 0.013404511535855201,
+    "verdict_agreement": 0,
+    "disagreeing_arms": [
+      "zne"
+    ]
+  },
+  "threshold": "PASS iff all five arms agree under rel_err <= 0.10",
+  "verdict": "FAIL",
+  "honest_scope": "toy single-qubit circuit on IBM hardware; not a production governance system",
+  "provenance_note": "Rebuilt 2026-08-14 from authoritative IBM Quantum job results after ephemeral workspace loss. See RECONSTRUCTION_NOTICE.md.",
+  "record_hash": "eb9c4ea993dc8df50dcb589028469a0cc26bd8cc4d60a97dbf5dd19adb289886"
+}
