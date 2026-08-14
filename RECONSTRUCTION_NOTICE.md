@@ -60,3 +60,39 @@ Remnant Fieldworks' covenant for this corpus is that records are preserved and
 corrections are published as dated disclosures rather than silent replacements.
 A workspace loss that changes a record hash is exactly the kind of event that
 gets quietly smoothed over. It is disclosed here instead.
+
+---
+
+## Second workspace loss — 2026-08-14 (QG-003)
+
+The ephemeral working directory was destroyed a **second time** on the same day,
+during the QG-003 depth sweep.
+
+**Lost:** the QG-003 preregistration file, the QG-003 runner script, and the
+locally written QG-003 findings note. None had been pushed to this repository
+before the loss, so **none carried a published SHA-256 lock.**
+
+**Not lost:** the nine IBM Quantum job IDs, which had been recorded outside the
+ephemeral directory. All nine results were re-fetched from IBM after the loss and
+**every one matched the pre-loss recorded value exactly (9/9)**. The analytic
+targets were independently recomputed from the hash-locked
+`common/circuits.py` and matched at all nine depth levels.
+
+### What this costs QG-003
+
+QG-003 is published at a **reduced evidence tier.** The design was fixed before
+the jobs were submitted in practice, but that ordering is **asserted, not
+provable** — the preregistration hash was never published ahead of execution.
+QG-003 must not be cited as hash-locked preregistration. QG-001, QG-002 and
+QG-004 are unaffected: their preregistration was pushed and hash-locked before
+any job was submitted.
+
+`experiments/QG-003_depth_boundary/run.py` is a reconstruction on the same terms
+as the other runners: faithful to the conditions executed, not the byte-identical
+file. The execution evidence is the nine job IDs.
+
+The full disclosure, and the corrected process that prevents a third occurrence
+(push the preregistration hash to GitHub **before** submitting any job), is in
+**[AMENDMENT_V2.md](AMENDMENT_V2.md)**.
+
+All work has since been moved off ephemeral storage.
