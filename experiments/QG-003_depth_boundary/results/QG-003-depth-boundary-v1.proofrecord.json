@@ -1,0 +1,244 @@
+{
+  "experiment_id": "QG-003-depth-boundary-v1",
+  "series": "quantum-governance-testbed",
+  "timestamp_utc": "2026-08-14T12:30:00+00:00",
+  "parameters": {
+    "backend": "ibm_marrakesh",
+    "shots": 4096,
+    "substrate": "axion-photon coupling circuit (axion_circuit) from common/circuits.py",
+    "substrate_reason": "the DM-002 neutrino circuit transpiles to constant depth 6 with zero two-qubit gates at theta=pi/4, so it cannot be used to sweep depth; the axion circuit's XX coupling compiles to CNOT-RZ-CNOT and scales linearly with Trotter steps",
+    "trotter_steps_swept": [
+      1,
+      2,
+      4,
+      6,
+      8,
+      12,
+      16,
+      24,
+      32
+    ],
+    "transpiled_depths": [
+      14,
+      26,
+      50,
+      74,
+      98,
+      146,
+      194,
+      290,
+      386
+    ],
+    "arms": [
+      "raw"
+    ],
+    "optimization_level": 1
+  },
+  "observable": "transpiled circuit depth at which relative error first crosses the 10% trust boundary",
+  "result": {
+    "levels": [
+      {
+        "arm": "depth_14",
+        "trotter_steps": 1,
+        "transpiled_depth": 14,
+        "two_qubit_gate_count": 2,
+        "job_id": "d9va5j0b1g9c73a8ce50",
+        "primitive": "SamplerV2",
+        "configuration": "defaults only (raw arm, no error mitigation)",
+        "counts": {
+          "00": 3613,
+          "01": 142,
+          "11": 323,
+          "10": 18
+        },
+        "shots": 4096,
+        "P_analytic": 0.912668,
+        "survival_probability": 0.882080078125,
+        "relative_error": 0.03351483987057729,
+        "verdict": "PASS"
+      },
+      {
+        "arm": "depth_26",
+        "trotter_steps": 2,
+        "transpiled_depth": 26,
+        "two_qubit_gate_count": 4,
+        "job_id": "d9va5jl0vrcc73bp0290",
+        "primitive": "SamplerV2",
+        "configuration": "defaults only (raw arm, no error mitigation)",
+        "counts": {
+          "01": 386,
+          "00": 3552,
+          "11": 116,
+          "10": 42
+        },
+        "shots": 4096,
+        "P_analytic": 0.974505,
+        "survival_probability": 0.8671875,
+        "relative_error": 0.11012514045592374,
+        "verdict": "FAIL"
+      },
+      {
+        "arm": "depth_50",
+        "trotter_steps": 4,
+        "transpiled_depth": 50,
+        "two_qubit_gate_count": 8,
+        "job_id": "d9va5k50vrcc73bp029g",
+        "primitive": "SamplerV2",
+        "configuration": "defaults only (raw arm, no error mitigation)",
+        "counts": {
+          "01": 1241,
+          "00": 2706,
+          "11": 58,
+          "10": 91
+        },
+        "shots": 4096,
+        "P_analytic": 0.980555,
+        "survival_probability": 0.66064453125,
+        "relative_error": 0.326254487254667,
+        "verdict": "FAIL"
+      },
+      {
+        "arm": "depth_74",
+        "trotter_steps": 6,
+        "transpiled_depth": 74,
+        "two_qubit_gate_count": 12,
+        "job_id": "d9va5kno3ppc73ak1940",
+        "primitive": "SamplerV2",
+        "configuration": "defaults only (raw arm, no error mitigation)",
+        "counts": {
+          "01": 2213,
+          "00": 1671,
+          "10": 175,
+          "11": 37
+        },
+        "shots": 4096,
+        "P_analytic": 0.981481,
+        "survival_probability": 0.407958984375,
+        "relative_error": 0.584343472390194,
+        "verdict": "FAIL"
+      },
+      {
+        "arm": "depth_98",
+        "trotter_steps": 8,
+        "transpiled_depth": 98,
+        "two_qubit_gate_count": 16,
+        "job_id": "d9va5l7o3ppc73ak1950",
+        "primitive": "SamplerV2",
+        "configuration": "defaults only (raw arm, no error mitigation)",
+        "counts": {
+          "10": 259,
+          "00": 1087,
+          "01": 2741,
+          "11": 9
+        },
+        "shots": 4096,
+        "P_analytic": 0.981793,
+        "survival_probability": 0.265380859375,
+        "relative_error": 0.7296977475139872,
+        "verdict": "FAIL"
+      },
+      {
+        "arm": "depth_146",
+        "trotter_steps": 12,
+        "transpiled_depth": 146,
+        "two_qubit_gate_count": 24,
+        "job_id": "d9va5ln2sl0c73blkhi0",
+        "primitive": "SamplerV2",
+        "configuration": "defaults only (raw arm, no error mitigation)",
+        "counts": {
+          "01": 1658,
+          "00": 2068,
+          "10": 262,
+          "11": 108
+        },
+        "shots": 4096,
+        "P_analytic": 0.982012,
+        "survival_probability": 0.5048828125,
+        "relative_error": 0.48586899905500136,
+        "verdict": "FAIL"
+      },
+      {
+        "arm": "depth_194",
+        "trotter_steps": 16,
+        "transpiled_depth": 194,
+        "two_qubit_gate_count": 32,
+        "job_id": "d9va5m7o3ppc73ak1970",
+        "primitive": "SamplerV2",
+        "configuration": "defaults only (raw arm, no error mitigation)",
+        "counts": {
+          "00": 3541,
+          "01": 348,
+          "11": 154,
+          "10": 53
+        },
+        "shots": 4096,
+        "P_analytic": 0.982088,
+        "survival_probability": 0.864501953125,
+        "relative_error": 0.11973066250173096,
+        "verdict": "FAIL"
+      },
+      {
+        "arm": "depth_290",
+        "trotter_steps": 24,
+        "transpiled_depth": 290,
+        "two_qubit_gate_count": 48,
+        "job_id": "d9va5mgb1g9c73a8cea0",
+        "primitive": "SamplerV2",
+        "configuration": "defaults only (raw arm, no error mitigation)",
+        "counts": {
+          "00": 3371,
+          "11": 191,
+          "01": 443,
+          "10": 91
+        },
+        "shots": 4096,
+        "P_analytic": 0.982142,
+        "survival_probability": 0.822998046875,
+        "relative_error": 0.16203762096010554,
+        "verdict": "FAIL"
+      },
+      {
+        "arm": "depth_386",
+        "trotter_steps": 32,
+        "transpiled_depth": 386,
+        "two_qubit_gate_count": 64,
+        "job_id": "d9va5mob1g9c73a8cebg",
+        "primitive": "SamplerV2",
+        "configuration": "defaults only (raw arm, no error mitigation)",
+        "counts": {
+          "00": 3178,
+          "11": 223,
+          "01": 573,
+          "10": 122
+        },
+        "shots": 4096,
+        "P_analytic": 0.982161,
+        "survival_probability": 0.77587890625,
+        "relative_error": 0.21002879746803219,
+        "verdict": "FAIL"
+      }
+    ],
+    "boundary_found": true,
+    "boundary_crossing_depth": 26,
+    "boundary_crossing_trotter_steps": 2,
+    "boundary_crossing_two_qubit_gates": 4,
+    "boundary_crossing_relative_error": 0.11012514045592374,
+    "last_passing_depth": 14,
+    "worst_depth": 98,
+    "worst_relative_error": 0.7296977475139872,
+    "worst_survival_probability": 0.265380859375,
+    "two_qubit_depolarized_floor": 0.25,
+    "monotonic_in_depth": false,
+    "post_floor_recovery_depth": 194,
+    "post_floor_recovery_survival_probability": 0.864501953125,
+    "post_floor_recovery_relative_error": 0.11973066250173096,
+    "non_monotonicity_note": "Fidelity degrades to the 2-qubit depolarized floor (0.265 vs floor 0.25) at depth 98, then recovers to 0.865 at depth 194 - roughly double the gate count - before diverging again. Coherent error cancellation produces apparent accuracy at particular depths, so a fixed depth cutoff is not a reliable trust control.",
+    "levels_passing": 1,
+    "levels_failing": 8
+  },
+  "threshold": "boundary located iff relative error crosses 0.10 within the swept depth range; experiment PASSes if a crossing depth is identified",
+  "verdict": "PASS (boundary found)",
+  "honest_scope": "toy 2-qubit axion circuit, single processor (ibm_marrakesh), raw arm only, one run per depth level. The crossing depth is specific to this circuit and this processor on this date and must not be read as a general depth limit. No error bars: single-shot-set per level, so run-to-run drift is not characterised.",
+  "provenance_note": "Executed 2026-08-14 on live IBM Quantum hardware; nine jobs. REDUCED EVIDENCE TIER: the QG-003 design was fixed before job submission in practice, but its preregistration file was lost in an ephemeral workspace destruction before it was pushed to GitHub and hash-locked. This record must NOT be cited as hash-locked preregistration. Analytic targets were recomputed after the loss from the hash-locked common/circuits.py, and all nine measured values were re-fetched from IBM and matched the pre-loss records exactly (9/9). run.py is a reconstruction. See AMENDMENT_V2.md sections 2 and 2.1.",
+  "record_hash": "a172db199d9ad9a9def5d42bc795417c79232f3992c86e6f8c60dad8cfa905d0"
+}
