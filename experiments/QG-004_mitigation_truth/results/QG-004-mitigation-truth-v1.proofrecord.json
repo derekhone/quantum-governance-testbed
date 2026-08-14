@@ -1,0 +1,125 @@
+{
+  "experiment_id": "QG-004-mitigation-truth-v1",
+  "series": "quantum-governance-testbed",
+  "timestamp_utc": "2026-08-14T03:50:00+00:00",
+  "parameters": {
+    "backend": "ibm_marrakesh",
+    "shots": 4096,
+    "trotter_steps": 6,
+    "theta_true": "pi/4",
+    "theta_false": "pi/8",
+    "delta_m2": 1.0,
+    "energy": 1.0,
+    "L": 1.0,
+    "substrate": "DM-002 sterile neutrino oscillation circuit",
+    "arms": [
+      "raw",
+      "dd",
+      "meas",
+      "twirl",
+      "zne"
+    ],
+    "optimization_level": 1
+  },
+  "observable": "false_pass_count against a deliberately falsified target",
+  "result": {
+    "P_true": 0.087782,
+    "P_false": 0.543891,
+    "separation": 0.456109,
+    "arms": [
+      {
+        "arm": "raw",
+        "job_id": "d9v8regb1g9c73a8aohg",
+        "primitive": "SamplerV2",
+        "configuration": "defaults only",
+        "counts": {
+          "0": 3735,
+          "1": 361
+        },
+        "shots": 4096,
+        "survival_probability": 0.088134765625,
+        "distance_from_true": 0.0003527656250000011,
+        "distance_from_false": 0.455756234375,
+        "rel_err_vs_true": 0.004018655589984292,
+        "rel_err_vs_false": 0.8379550946329319,
+        "passes_against_falsified_target": false,
+        "closer_to_false_than_true": false
+      },
+      {
+        "arm": "dd",
+        "job_id": "d9v8rgf2sl0c73blit8g",
+        "primitive": "SamplerV2",
+        "configuration": "dynamical_decoupling.enable=True, sequence_type=XX",
+        "counts": {
+          "0": 3686,
+          "1": 410
+        },
+        "shots": 4096,
+        "survival_probability": 0.10009765625,
+        "distance_from_true": 0.012315656250000001,
+        "distance_from_false": 0.44379334375,
+        "rel_err_vs_true": 0.14029819609942815,
+        "rel_err_vs_false": 0.8159600797770141,
+        "passes_against_falsified_target": false,
+        "closer_to_false_than_true": false
+      },
+      {
+        "arm": "meas",
+        "job_id": "d9v8rifo3ppc73ajvkn0",
+        "primitive": "SamplerV2",
+        "configuration": "twirling.enable_measure=True",
+        "counts": {
+          "0": 3698,
+          "1": 398
+        },
+        "shots": 4096,
+        "survival_probability": 0.09716796875,
+        "distance_from_true": 0.009385968750000001,
+        "distance_from_false": 0.44672303125,
+        "rel_err_vs_true": 0.10692361475017659,
+        "rel_err_vs_false": 0.821346614027443,
+        "passes_against_falsified_target": false,
+        "closer_to_false_than_true": false
+      },
+      {
+        "arm": "twirl",
+        "job_id": "d9v8rk72sl0c73blitd0",
+        "primitive": "SamplerV2",
+        "configuration": "twirling.enable_gates=True",
+        "counts": {
+          "0": 3727,
+          "1": 369
+        },
+        "shots": 4096,
+        "survival_probability": 0.090087890625,
+        "distance_from_true": 0.002305890625000001,
+        "distance_from_false": 0.453803109375,
+        "rel_err_vs_true": 0.02626837648948533,
+        "rel_err_vs_false": 0.8343640717993127,
+        "passes_against_falsified_target": false,
+        "closer_to_false_than_true": false
+      },
+      {
+        "arm": "zne",
+        "job_id": "d9v8rll0vrcc73boudbg",
+        "primitive": "EstimatorV2",
+        "configuration": "resilience.zne_mitigation=True, noise_factors=[1,3], extrapolator=linear",
+        "expectation_z": 0.8095678441526414,
+        "survival_probability": 0.09521607792367931,
+        "distance_from_true": 0.007434077923679311,
+        "distance_from_false": 0.4486749220763207,
+        "rel_err_vs_true": 0.0846879533808675,
+        "rel_err_vs_false": 0.8249353677047804,
+        "passes_against_falsified_target": false,
+        "closer_to_false_than_true": false
+      }
+    ],
+    "false_pass_count": 0,
+    "any_arm_closer_to_false": false
+  },
+  "threshold": "PASS iff false_pass_count == 0 against the falsified target",
+  "verdict": "PASS",
+  "honest_scope": "toy single-qubit circuit on IBM hardware; not a production governance system",
+  "provenance_note": "Rebuilt 2026-08-14 from authoritative IBM Quantum job results after ephemeral workspace loss. See RECONSTRUCTION_NOTICE.md.",
+  "record_hash": "f5f7b3187adf09a4e9b57e5d300b7e35992aa33db53cedcf219cc37ad1573762"
+}
